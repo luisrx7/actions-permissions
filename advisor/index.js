@@ -3,7 +3,7 @@ const github = require('@actions/github');
 const AdmZip = require('adm-zip');
 
 async function analyze(name, count, token, owner, repo, branch) {
-  console.log(`Analyzing ${name} for the last ${count} successful runs.\n`);
+  console.log(`Analyzing ${name} for the last ${count} successful runs. on repo ${repo}\n`);
   const octokit = github.getOctokit(token)
 
   const runs = await octokit.rest.actions.listWorkflowRuns({
